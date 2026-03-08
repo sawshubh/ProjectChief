@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Chief — Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cwf/css/login-page.css' %}" />
+  </head>
+  <body>
+    <script src="{% static 'cwf/js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'cwf/js/jquery.haml-1.3.js' %}"></script>
+    <script src="{% static 'cwf/js/utils.js' %}"></script>
+    <script src="{% static 'cwf/js/login.js' %}"></script>
+
+    <script>
+      $(document).ready(function () {
+        cwf.login.init();
+      });
+    </script>
+  </body>
+</html>

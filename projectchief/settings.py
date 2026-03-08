@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 SHARED_APPS = [
     "django_tenants",
     "tenants",
+    "cwf",
     "django.contrib.contenttypes",
     "django.contrib.auth",
     "django.contrib.sessions",
@@ -68,7 +69,8 @@ ROOT_URLCONF = "projectchief.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        # "DIRS": [],
+        "DIRS": [BASE_DIR / 'cwf' / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -156,3 +158,7 @@ TENANT_DOMAIN_MODEL = "tenants.Domain"
 ROOT_URLCONF = "projectchief.urls"
 PUBLIC_SCHEMA_URLCONF = "projectchief.urls"
 TENANT_URLCONF = "projectchief.tenant_urls"
+
+import os
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'cwf' / 'static']
