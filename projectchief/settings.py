@@ -31,27 +31,25 @@ ALLOWED_HOSTS = []
 # Application definition
 
 SHARED_APPS = [
-    "django_tenants",
-    "tenants",
-    "cwf",
-    "django.contrib.contenttypes",
-    "django.contrib.auth",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "django.contrib.admin",
+    'django_tenants',
+    'tenants',
+    'cwf',
+    'django.contrib.contenttypes',
+    'django.contrib.auth',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
 ]
 
 TENANT_APPS = [
-    "django.contrib.contenttypes",
-    "cinex360",
-    "portfolio",
-    "siddhitaarts",
+    'django.contrib.contenttypes',
 ]
 
 INSTALLED_APPS = list(SHARED_APPS) + [
     app for app in TENANT_APPS if app not in SHARED_APPS
-]
+] + ['cinex360', 'portfolio', 'siddhitaarts']
+
 
 MIDDLEWARE = [
     "django_tenants.middleware.main.TenantMainMiddleware",  # MUST be first
