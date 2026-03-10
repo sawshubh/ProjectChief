@@ -48,9 +48,9 @@ class Movie(BaseModel):
     writers  = models.JSONField(default=list, blank=True)
     production_companies  = models.JSONField(default=list, blank=True)
     production_countries  = models.JSONField(default=list, blank=True)
-    director = models.CharField(max_length=255, null=True, blank=True, db_index=True)
-    director_of_photography = models.CharField(max_length=255, null=True, blank=True)
-    music_composer = models.CharField(max_length=255, null=True, blank=True)
+    director = models.TextField(null=True, blank=True, db_index=True)
+    director_of_photography = models.TextField(null=True, blank=True)
+    music_composer = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
